@@ -4,6 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BELTY CHAT</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#00c853">
+<link rel="icon" href="icone.png">
+<link rel="apple-touch-icon" href="icone.png">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
 body{background:#0d1117;color:#fff}
@@ -166,9 +170,12 @@ async function enviarMsg(){
   }, 500);
   document.getElementById('msgInput').value = "";
 }
-
 function gravarVoz(){
   alert("Segura e fala 🎤");
+}
+<script>
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('sw.js');
 }
 </script>
 </body>
